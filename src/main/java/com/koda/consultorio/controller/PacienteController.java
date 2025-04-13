@@ -16,6 +16,11 @@ public class PacienteController {
     this.repository = repository;
   }
 
+  @PostMapping
+  public Paciente criarPaciente(@RequestBody Paciente paciente) {
+    return repository.save(paciente);
+  }
+
   @GetMapping
   public List<Paciente> listar(){
     return repository.findAll();
